@@ -87,7 +87,7 @@ const HomePage = () => {
           onSelect={addSymbolToWatch}
         />
       </Box>
-      <Box variant="container" my={2}>
+      <Box width={1} variant="container" my={2}>
         <TableSort selected={sortOrder} onSort={sortList} />
       </Box>
       <Box variant="container" mt={2}>
