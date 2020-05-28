@@ -30,7 +30,7 @@ export const SymbolSelector = ({ isLoading, list, onSelect }) => {
         >
           <option>Please Select</option>
           {list.map(item => (
-            <option key={item.slug} value={item.symbol}>
+            <option key={item.slug} value={item.id}>
               {item.name}
             </option>
           ))}

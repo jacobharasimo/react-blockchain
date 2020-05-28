@@ -46,12 +46,10 @@ const homeReducer = handleActions(
       if (!draft.activeItems) {
         draft.activeItems = [];
       }
-
       // eslint-disable-next-line guard-for-in,no-restricted-syntax
       for (const property in action.payload.symbol) {
         draft.activeItems.push(action.payload.symbol[property]);
       }
-
       return draft;
     }),
     [loadSymbolChoices]: produce(draft => {

@@ -21,12 +21,14 @@ export const makeSelectActiveItems = createSelector(selectHomepage, state => {
   if (state.activeItems && state.activeItems.length) {
     switch (sortOrder) {
       case 'price':
-        return state.activeItems.sort((a, b) =>
-          a.quote.USD.price > b.quote.USD.price ? 1 : -1,
-        );
+        return state.activeItems
+          .slice()
+          .sort((a, b) => (a.quote.USD.price > b.quote.USD.price ? 1 : -1));
       default:
         // used for 'rank'
-        return state.activeItems.sort((a, b) => (a.rank > b.rank ? -1 : 1));
+        return state.activeItems
+          .slice()
+          .sort((a, b) => (a.cmc_rank > b.cmc_rank ? -1 : 1));
     }
   }
   return state.activeItems;
